@@ -1,27 +1,51 @@
 const express = require('express');
 
-const placeholderMessages = require('./messages');
-
-
+const messages = require('./messages');
 
 const server = express();
 
 const bodyParser = express.urlencoded({extended:true});
 
-let users = Object.values(placeholderMessages)
+let uid = Object.keys(messages).pop(); //5?
 
-//console.log(users)
+server.post('/', bodyParser, (req,res) => {
 
+    // Two alternative methods for getting a unique ID:
 
-let myHtml = '';
+    // const lastKey = Object.keys(messages).pop();
+    //messages[lastKey+1] = req.body;
 
-for (const user of users) {
-    let userName = user.name;
-    let userText = user.text;
-    myHtml += `<div><h4>${userName}</h4><p>${userText}</p></div>\n`;
-}
+    uid++;
+    //console.log(uid);
+    //console.log(typeof uid);
+    messages[uid] = req.body;
 
-const html =/* html */ `
+    res.redirect('/');
+})
+
+server.get('/', (req,res)=>{
+
+    let myHtml = '';
+
+    for (const [key, value] of Object.entries(messages)) {
+        //console.log(key, value);
+        let userName = value.name;
+        let userId = key;
+        let userText = value.text;
+        //console.log(userId, userName, userText)
+        myHtml += `
+        <div>
+            <h4>${userName}</h4>
+            <p>${userText}</p> 
+            <form action="/delete" method="POST">
+            <label>
+                <button name="messageToDelete" value="${userId}">Delete Me</button>
+            </label>
+            </form>
+        </div>\n`;
+    }
+
+    const html =/* html */ `
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -50,16 +74,15 @@ const html =/* html */ `
 </html>
 `;
 
-server.post('/', bodyParser, (req,res) => {
+    res.send(`${html}`);
 
-    users.push(req.body);
-
-    res.redirect('/')
 })
 
-server.get('/',(req,res)=>{
-    res.send(`${html}`)
-})
+server.post('/delete', bodyParser, (req, res) => {
+    let messageToDelete = req.body.messageToDelete;
+    delete messages[messageToDelete];
+    res.redirect('/');
+});
 
 let PORT = 3333;
 
