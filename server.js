@@ -1,43 +1,41 @@
-const express = require('express');
+const express = require("express");
 
-const messages = require('./messages');
+const messages = require("./messages");
 
 const server = express();
 
-const staticHandler = express.static('public');
+const staticHandler = express.static("public");
 
 server.use(staticHandler);
 
-const bodyParser = express.urlencoded({extended:true});
+const bodyParser = express.urlencoded({ extended: true });
 
 let uid = Object.keys(messages).pop(); //5?
 
-server.post('/', bodyParser, (req,res) => {
+server.post("/", bodyParser, (req, res) => {
+  // Two alternative methods for getting a unique ID:
 
-    // Two alternative methods for getting a unique ID:
+  // const lastKey = Object.keys(messages).pop();
+  //messages[lastKey+1] = req.body;
 
-    // const lastKey = Object.keys(messages).pop();
-    //messages[lastKey+1] = req.body;
+  uid++;
+  //console.log(uid);
+  //console.log(typeof uid);
+  messages[uid] = req.body;
 
-    uid++;
-    //console.log(uid);
-    //console.log(typeof uid);
-    messages[uid] = req.body;
+  res.redirect("/");
+});
 
-    res.redirect('/');
-})
+server.get("/", (req, res) => {
+  let myHtml = "";
 
-server.get('/', (req,res)=>{
-
-    let myHtml = '';
-
-    for (const [key, value] of Object.entries(messages)) {
-        //console.log(key, value);
-        let userName = value.name;
-        let userId = key;
-        let userText = value.text;
-        //console.log(userId, userName, userText)
-        myHtml += `
+  for (const [key, value] of Object.entries(messages)) {
+    //console.log(key, value);
+    let userName = value.name;
+    let userId = key;
+    let userText = value.text;
+    //console.log(userId, userName, userText)
+    myHtml += `
         <div>
             <h4>${userName}</h4>
             <p>${userText}</p> 
@@ -47,9 +45,9 @@ server.get('/', (req,res)=>{
             </label>
             </form>
         </div>\n`;
-    }
+  }
 
-    const html =/* html */ `
+  const html = /* html */ `
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -58,6 +56,7 @@ server.get('/', (req,res)=>{
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>server...</title>
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     </head>
     <body>
         <h1>Title</h1>
@@ -78,14 +77,13 @@ server.get('/', (req,res)=>{
 </html>
 `;
 
-    res.send(`${html}`);
+  res.send(`${html}`);
+});
 
-})
-
-server.post('/delete', bodyParser, (req, res) => {
-    let messageToDelete = req.body.messageToDelete;
-    delete messages[messageToDelete];
-    res.redirect('/');
+server.post("/delete", bodyParser, (req, res) => {
+  let messageToDelete = req.body.messageToDelete;
+  delete messages[messageToDelete];
+  res.redirect("/");
 });
 
 // Our original code:
@@ -99,6 +97,5 @@ const PORT = process.env.PORT || 3000;
 if (port == null || port == "") {
   port = 8000;
 } */
-
 
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
