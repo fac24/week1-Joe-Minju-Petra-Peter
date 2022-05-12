@@ -4,6 +4,10 @@ const messages = require('./messages');
 
 const server = express();
 
+const staticHandler = express.static('public');
+
+server.use(staticHandler);
+
 const bodyParser = express.urlencoded({extended:true});
 
 let uid = Object.keys(messages).pop(); //5?
