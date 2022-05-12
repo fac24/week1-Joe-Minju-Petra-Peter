@@ -1,4 +1,117 @@
-body{
-    color: blue;
-    
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  font-family: "Comic Neue", cursive;
+}
+
+body {
+  background-image: repeating-conic-gradient(
+    rgb(112, 195, 191) 0 9deg,
+    rgb(93, 191, 190) 9deg 18deg
+  );
+}
+
+h1 {
+  font-family: "Bangers", cursive;
+  font-size: 3.2em;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: rgb(192, 56, 46);
+  -webkit-text-stroke: 1px black;
+}
+
+#form-container {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#post-message {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 360px;
+  height: fit-content;
+  padding: 20px;
+  border: solid black;
+  /* transform: skew(-2deg); */
+  border-width: 3px 3px 5px 5px;
+  border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+  transform: rotate(-1deg);
+  background-color: white;
+  background-image: radial-gradient(
+      circle,
+      rgba(133, 133, 133, 0.05) 0,
+      white 0
+    ),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 0, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 0, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 0, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 0, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 0, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 0, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 0, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 0, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 0, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 0, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.04) 3%, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.05) 4%, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.1) 5%, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.15) 10%, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.2) 15%, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.25) 20%, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.3) 25%, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.35) 30%, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.4) 35%, white 0),
+    radial-gradient(circle, rgba(133, 133, 133, 0.45) 40%, white 0),
+    radial-gradient(circle, rgb(133, 133, 133, 0.5) 45%, white 0),
+    radial-gradient(circle, rgb(133, 133, 133, 0.5) 50%, white 0);
+  background-size: 1em 1em;
+  background-repeat: repeat-x;
+  background-position: 0 0, 0 1em, 0 2em, 0 3em, 0 4em, 0 5em, 0 6em, 0 7em,
+    0 8em, 0 9em, 0 10em, 0 11em, 0 12em, 0 13em, 0 14em, 0 15em, 0 16em, 0 17em,
+    0 18em, 0 19em, 0 20em, 0 21em, 0 22em;
+}
+
+.form-labels {
+  background-color: rgb(127, 242, 72);
+  color: yellow;
+  font-family: "Bangers", cursive;
+  letter-spacing: 0.02em;
+  font-size: 1.2em;
+  font-weight: 600;
+  width: fit-content;
+  padding: 15px;
+  margin: 8px;
+  border-radius: 100px / 60px;
+  border: 2px solid black;
+  -webkit-text-stroke: 0.5px black;
+}
+
+.form-inputs {
+  font-family: "Comic Neue", cursive;
+  font-size: 1.1em;
+  border: solid black;
+  padding: 12px;
+}
+
+#name-input {
+  border-width: 4px 2px 2px 4px;
+  border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+  transform: rotate(1deg);
+}
+
+#message-input {
+  border-width: 2px 3px 2px 4px;
+  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+  transform: rotate(2deg);
+}
+
+#submit-button {
 }
