@@ -71,7 +71,7 @@ server.get("/", (req, res) => {
                     Message
                 </label>
                 <textarea name="text" required maxlength="140" placeholder="Write a message..." rows="4" id="message-input" class="form-inputs"></textarea>
-                <button type='submit' id="submit-button">Submit Please</button>
+                <button type='submit' id="submit-button">Submit</button>
             </form>
         </section>
         ${myHtml}
