@@ -36,12 +36,12 @@ server.get("/", (req, res) => {
     let userText = value.text;
     //console.log(userId, userName, userText)
     myHtml += `
-        <div id="message-display">
-            <h4 id="username">${userName}</h4>
-            <p id="posted-message">${userText}</p> 
-            <form action="/delete" method="POST" id="delete-message">
+        <div class="message-display">
+            <h4 class="username">${userName}</h4>
+            <p class="posted-message">${userText}</p> 
+            <form action="/delete" method="POST" class="delete-message">
             <label>
-                <button name="messageToDelete" value="${userId}" id="delete-button">Delete Me</button>
+                <button name="messageToDelete" value="${userId}" class="delete-button">Delete Me</button>
             </label>
             </form>
         </div>\n`;
