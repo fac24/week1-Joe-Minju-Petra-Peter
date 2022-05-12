@@ -88,6 +88,17 @@ server.post('/delete', bodyParser, (req, res) => {
     res.redirect('/');
 });
 
-let PORT = 3333;
+// Our original code:
+// let PORT =  3333;
+
+// Mentor's suggestion:
+const PORT = process.env.PORT || 3000;
+
+// Heroku documentation suggestion:
+/* let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+} */
+
 
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
