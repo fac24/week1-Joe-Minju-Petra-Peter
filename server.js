@@ -59,7 +59,7 @@ server.get("/", (req, res) => {
         <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Title</h1>
+        <h1>KAPOW!</h1>
         <section id="form-container">
             <form method='POST' id="post-message">
             <h3>Write your message here: </h3>
