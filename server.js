@@ -39,9 +39,9 @@ server.get("/", (req, res) => {
         <div class="message-display">
             <h4 class="username">${userName}</h4>
             <p class="posted-message">${userText}</p> 
-            <form action="/delete" method="POST" id="delete-message">
+            <form action="/delete" method="POST" class="delete-message">
             <label>
-                <button name="messageToDelete" value="${userId}" id="delete-button">Delete Me</button>
+                <button name="messageToDelete" value="${userId}" class="delete-button">Delete Me</button>
             </label>
             </form>
         </div>\n`;
