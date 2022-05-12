@@ -36,9 +36,9 @@ server.get("/", (req, res) => {
     let userText = value.text;
     //console.log(userId, userName, userText)
     myHtml += `
-        <div id="message-display">
-            <h4 id="username">${userName}</h4>
-            <p id="posted-message">${userText}</p> 
+        <div class="message-display">
+            <h4 class="username">${userName}</h4>
+            <p class="posted-message">${userText}</p> 
             <form action="/delete" method="POST" id="delete-message">
             <label>
                 <button name="messageToDelete" value="${userId}" id="delete-button">Delete Me</button>
@@ -71,7 +71,7 @@ server.get("/", (req, res) => {
                     Message
                 </label>
                 <textarea name="text" required maxlength="140" placeholder="Write a message..." rows="4" id="message-input" class="form-inputs"></textarea>
-                <button type='submit' id="submit-button">Submit Please</button>
+                <button type='submit' id="submit-button">Submit</button>
             </form>
         </section>
         ${myHtml}
