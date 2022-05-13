@@ -36,17 +36,9 @@ server.get("/", (req, res) => {
     let userText = value.text;
     //console.log(userId, userName, userText)
 
-    function CSSclassModifier() {
-      if (userId % 2 === 0) {
-        return "message-right";
-      } else {
-        return "message-left";
-      }
-    }
-
     myHtml += `
     <div class="message-container">
-        <div class="message-display ${CSSclassModifier()}">
+        <div class="message-display">
             <h4 class="username">${userName}</h4>
             <p class="posted-message">${userText}</p> 
             <form action="/delete" method="POST" class="delete-message">

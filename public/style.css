@@ -177,24 +177,24 @@ h1 {
   margin-top: -21.5px;
 }
 
-.message-left {
+.message-container:nth-child(odd) .message-display {
   float: left;
   transform: rotate(3deg);
 }
 
-.message-left::before {
+.message-container:nth-child(odd) .message-display::before {
   left: 0;
   border-right-color: white;
   border-left: 0;
   margin-left: -43px;
 }
 
-.message-right {
+.message-container:nth-child(even) .message-display {
   float: right;
   transform: rotate(-0.5deg);
 }
 
-.message-right::before {
+.message-container:nth-child(even) .message-display::before {
   right: 0;
   border-left-color: white;
   border-right: 0;
@@ -218,7 +218,6 @@ h1 {
   float: right;
   margin: 0 20px;
   font-family: "Comic Neue", cursive;
-
   transform: rotate(2deg);
   padding: 10px;
   font-size: 0.8em;
