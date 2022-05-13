@@ -39,7 +39,7 @@ server.get("/", (req, res) => {
     myHtml += `
     <div class="message-container">
         <div class="message-display">
-            <h4 class="username">${userName}</h4>
+            <h3 class="username">${userName}</h4>
             <p class="posted-message">${userText}</p> 
             <form action="/delete" method="POST" class="delete-message">
             <label>
@@ -65,7 +65,7 @@ server.get("/", (req, res) => {
         <h1>KAPOW!</h1>
         <section id="form-container">
             <form method='POST' id="post-message">
-            <h3>Write your message here: </h3>
+            <h2>Write your message here: </h3>
                 <label for='name' id="name-input-label" class="form-labels">
                     Name:
                 </label>
