@@ -39,7 +39,7 @@ server.get("/", (req, res) => {
     myHtml += `
     <div class="message-container">
         <div class="message-display">
-            <h4 class="username">${userName}</h4>
+            <h3 class="username">${userName}</h4>
             <p class="posted-message">${userText}</p> 
             <form action="/delete" method="POST" class="delete-message">
             <label>
@@ -65,13 +65,13 @@ server.get("/", (req, res) => {
         <h1>KAPOW!</h1>
         <section id="form-container">
             <form method='POST' id="post-message">
-            <h3>Write your message here: </h3>
+            <h2>Write your message here: </h3>
                 <label for='name' id="name-input-label" class="form-labels">
-                    Name
+                    Name:
                 </label>
                 <input name="name" type="text" required maxlength="50" placeholder="Enter your name..." id="name-input" class="form-inputs" />
                 <label for='text' id="message-input-label" class="form-labels">
-                    Message
+                    Message:
                 </label>
                 <textarea name="text" required maxlength="140" placeholder="Write a message..." rows="4" id="message-input" class="form-inputs"></textarea>
                 <button type='submit' id="submit-button">Submit</button>
@@ -84,7 +84,7 @@ server.get("/", (req, res) => {
 </html>
 `;
 
-  res.send(`${html}`);
+  res.send(html);
 });
 
 server.post("/delete", bodyParser, (req, res) => {
