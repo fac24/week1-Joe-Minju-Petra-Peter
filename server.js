@@ -67,11 +67,11 @@ server.get("/", (req, res) => {
             <form method='POST' id="post-message">
             <h3>Write your message here: </h3>
                 <label for='name' id="name-input-label" class="form-labels">
-                    Name
+                    Name:
                 </label>
                 <input name="name" type="text" required maxlength="50" placeholder="Enter your name..." id="name-input" class="form-inputs" />
                 <label for='text' id="message-input-label" class="form-labels">
-                    Message
+                    Message:
                 </label>
                 <textarea name="text" required maxlength="140" placeholder="Write a message..." rows="4" id="message-input" class="form-inputs"></textarea>
                 <button type='submit' id="submit-button">Submit</button>
