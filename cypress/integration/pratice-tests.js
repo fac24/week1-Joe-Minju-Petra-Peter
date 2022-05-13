@@ -1,5 +1,5 @@
 it("can find webpage", () => {
-  cy.visit("http://localhost:3000/");
+  cy.visit("/");
 });
 
 it("checking if there is a label for name area", () => {
