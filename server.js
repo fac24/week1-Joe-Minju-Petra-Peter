@@ -38,12 +38,12 @@ server.get('/', (req,res)=>{
         let userText = value.text;
         //console.log(userId, userName, userText)
         myHtml += `
-        <div>
-            <h4>${userName}</h4>
-            <p>${userText}</p> 
-            <form action="/delete" method="POST">
+        <div class="message-display">
+            <h4 class='username'>${userName}</h4>
+            <p class="posted-message">${userText}</p> 
+            <form action="/delete" method="POST" class="delete-message">
             <label>
-                <button name="messageToDelete" value="${userId}">Delete Me</button>
+                <button name="messageToDelete" value="${userId}" class="delete-button">Delete Me</button>
             </label>
             </form>
         </div>\n`;
@@ -61,17 +61,17 @@ server.get('/', (req,res)=>{
     </head>
     <body>
         <h1>Title</h1>
-        <form method='POST'>
+        <form method='POST' id="post-message">
         <h3>Please write message here</h3>
             <label for='name'>
                 Name:
-                <input name="name" type="text" required maxlength="50" placeholder="Enter your name..." />
+                <input name="name" type="text" required maxlength="50" placeholder="Enter your name..." id="name-input" />
             </label>
             <label for='text'>
                 Message:
-                <textarea name="text" required maxlength="140" placeholder="Write a message..." rows="4" cols="50"></textarea>
+                <textarea name="text" required maxlength="140" placeholder="Write a message..." rows="4" cols="50" id="message-input"></textarea>
             </label>
-            <button type='submit'>Submit Please</button>
+            <button type='submit' id="submit-button">Submit Please</button>
         </form>
         ${myHtml}
     </body>
