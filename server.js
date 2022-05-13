@@ -84,7 +84,7 @@ server.get("/", (req, res) => {
 </html>
 `;
 
-  res.send(`${html}`);
+  res.send(html);
 });
 
 server.post("/delete", bodyParser, (req, res) => {
