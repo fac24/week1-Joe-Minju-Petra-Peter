@@ -35,16 +35,19 @@ server.get("/", (req, res) => {
     let userId = key;
     let userText = value.text;
     //console.log(userId, userName, userText)
+
     myHtml += `
+    <div class="message-container">
         <div class="message-display">
             <h4 class="username">${userName}</h4>
             <p class="posted-message">${userText}</p> 
             <form action="/delete" method="POST" class="delete-message">
             <label>
-                <button name="messageToDelete" value="${userId}" class="delete-button">Delete Me</button>
+                <button name="messageToDelete" value="${userId}" class="delete-button">Delete</button>
             </label>
             </form>
-        </div>\n`;
+        </div>
+      </div>\n`;
   }
 
   const html = /* html */ `
@@ -74,7 +77,9 @@ server.get("/", (req, res) => {
                 <button type='submit' id="submit-button">Submit</button>
             </form>
         </section>
-        ${myHtml}
+        <section id="message-thread">
+            ${myHtml}
+        </section>
     </body>
 </html>
 `;

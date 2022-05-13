@@ -127,8 +127,35 @@ h1 {
   box-shadow: 3px 3px 0 rgb(0, 0, 0);
 }
 
+#message-thread {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  min-width: 350px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  background-color: white;
+  height: fit-content;
+  margin: 90px auto;
+  padding: 20px 10vw 20px 10vw;
+  border: solid black;
+  border-width: 4px 2px 2px 4px;
+  border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+  transform: rotate(-1.5deg);
+  background-image: radial-gradient(rgb(255, 219, 101) 12%, transparent 12%),
+    radial-gradient(rgb(255, 219, 101) 12%, transparent 12%);
+  background-color: rgb(253, 246, 129);
+  background-position: 0 0, 50px 50px;
+  background-size: 100px 100px;
+}
+
+.message-container {
+  width: 100%;
+}
+
 .message-display {
-  margin: 30px 100px;
+  margin: 30px 0;
   padding: 20px 30px;
   min-width: 250px;
   width: fit-content;
@@ -142,14 +169,60 @@ h1 {
 .message-display::before {
   content: "";
   position: absolute;
-  left: 0;
   top: 50%;
   width: 0;
   height: 0;
   border: 43px solid transparent;
-  border-right-color: white;
-  border-left: 0;
   border-top: 3px solid black;
   margin-top: -21.5px;
+}
+
+.message-container:nth-child(odd) .message-display {
+  float: left;
+  transform: rotate(3deg);
+}
+
+.message-container:nth-child(odd) .message-display::before {
+  left: 0;
+  border-right-color: white;
+  border-left: 0;
   margin-left: -43px;
+}
+
+.message-container:nth-child(even) .message-display {
+  float: right;
+  transform: rotate(-0.5deg);
+}
+
+.message-container:nth-child(even) .message-display::before {
+  right: 0;
+  border-left-color: white;
+  border-right: 0;
+  margin-right: -43px;
+}
+
+.username {
+  font-family: "Bangers", cursive;
+  font-size: 1.3em;
+  letter-spacing: 0.05em;
+  padding: 0 15px;
+}
+
+.posted-message {
+  font-size: 1.15em;
+  font-weight: 500;
+  padding: 0 5px 5px 15px;
+}
+
+.delete-button {
+  float: right;
+  margin: 0 20px;
+  font-family: "Comic Neue", cursive;
+  transform: rotate(2deg);
+  padding: 10px;
+  font-size: 0.8em;
+  background: rgb(93, 191, 190);
+  color: white;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 3px 3px 0 rgb(0, 0, 0);
 }
