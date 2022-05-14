@@ -4,7 +4,7 @@
 
 ## FAC24 week 1: servers
 
-### Petra, Peter, Minju, Joe
+### Designed and Developed by [Petra](https://github.com/alternadiva), [Peter](https://github.com/PJSalter), [Minju](https://github.com/minju25kim), [Joe](https://github.com/joe-dev-public)
 
 #### How to use:
 
