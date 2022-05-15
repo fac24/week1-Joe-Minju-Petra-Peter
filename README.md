@@ -21,3 +21,7 @@
 
 ![dream-bubble](https://user-images.githubusercontent.com/45575016/168419294-b55338c8-01c4-4219-8677-ffacd1b83fed.gif)
 
+# 💫 💭 KAPOW site Screenshots: 🙂 🦾 🤖
+
+<img width="300" alt="submision of name and message" src="https://user-images.githubusercontent.com/45575016/168482063-471ccc88-afb9-43ed-9fc5-c4587085dd64.png"> <img width="300" alt="speech bubbles" src="https://user-images.githubusercontent.com/45575016/168482074-2cdeb965-88ca-48b9-8d79-94779c617de9.png">
+
