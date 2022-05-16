@@ -33,6 +33,7 @@ As a team we came up with a comic style theme that came across very interactive 
 # 🧠 Project scope:
 
 - As a team we all worked collaboratively together to complete the core requirements for a user. 🙌
+- As an extra stretch goal in the future we could address an edit functionality option after message being submitted in the thread.
 - Section to be completed..........
 
 # Recommendations and conclusions:
